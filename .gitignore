@@ -1,0 +1,20 @@
+# Build directories
+/build/
+/out/
+/dist/
+/install/
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+*.cmake
+cmake_install.cmake
+
+# IDEs
+.vscode/
+.idea/
+*.user
+
+# OS
+.DS_Store
+Thumbs.db
