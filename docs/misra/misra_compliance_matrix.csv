@@ -1,0 +1,2 @@
+Rule ID,Title (short),Category,Enforced By (tool/check),Status,Deviation ID,Notes
+MISRA C++ 2008-0-1,"Example short title",Required,clang-tidy(cppcoreguidelines-*),Pending,,

@@ -44,3 +44,25 @@ int main() {
 ## License
 
 MIT — see [LICENSE](LICENSE).
+
+
+---
+
+## MISRA C++ + Core Guidelines + Clean Code
+
+This template ships with:
+
+- **clang-tidy** (`.clang-tidy`) using `cppcoreguidelines`, `hicpp`, `bugprone`, `modernize`, `readability`, `performance`
+- **cppcheck** config (`cppcheck.cfg`)
+- **Pre-commit** hooks for formatting and linting (`.pre-commit-config.yaml`)
+- **Compliance process** docs (`docs/MISRA_COMPLIANCE.md`) with RDP template and a CSV matrix
+
+### Typical "strict" build
+
+```bash
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release   -DOSS_ENABLE_CLANG_TIDY=ON -DOSS_ENABLE_CPPCHECK=ON   -DOSS_ENFORCE_NO_EXCEPTIONS=ON -DOSS_ENFORCE_NO_RTTI=ON   -DOSS_FORBID_DYNAMIC_ALLOCATION=ON
+cmake --build build
+ctest --test-dir build --output-on-failure
+```
+
+> Note: Full MISRA rule texts are copyrighted; this starter focuses on a *process* and *tooling* approach.

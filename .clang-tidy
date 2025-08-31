@@ -1,0 +1,31 @@
+Checks: >-
+  -*,
+  bugprone-*,
+  cppcoreguidelines-*,
+  hicpp-*,
+  modernize-*,
+  performance-*,
+  portability-*,
+  readability-*,
+  misc-*,
+  clang-analyzer-*,
+  # Turn off checks that are noisy or conflict with MISRA-like constraints
+  -cppcoreguidelines-owning-memory,
+  -cppcoreguidelines-avoid-non-const-global-variables,
+  -cppcoreguidelines-non-private-member-variables-in-classes,
+  -cppcoreguidelines-avoid-magic-numbers,        # allow small demo literals
+  -readability-magic-numbers,                     # ditto
+  -modernize-use-trailing-return-type,
+  -hicpp-signed-bitwise,
+  -hicpp-uppercase-literal-suffix
+WarningsAsErrors: ''
+HeaderFilterRegex: '^(include|src|tests|examples)/'
+AnalyzeTemporaryDtors: false
+FormatStyle: file
+CheckOptions:
+  - { key: readability-identifier-naming.VariableCase, value: lower_case }
+  - { key: readability-identifier-naming.FunctionCase, value: camelBack }
+  - { key: readability-identifier-naming.ClassCase, value: CamelCase }
+  - { key: readability-identifier-naming.NamespaceCase, value: lower_case }
+  - { key: cppcoreguidelines-special-member-functions.AllowMissingMoveFunctions, value: '0' }
+  - { key: cppcoreguidelines-pro-bounds-array-to-pointer-decay.WarnAboutAmbiguousDecay, value: '1' }
